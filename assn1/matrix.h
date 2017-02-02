@@ -11,6 +11,7 @@ void *read_matrix_file(const char *filename, int *height, int *width, int floati
 	int size = *height * *width;
 	void *matrix = malloc((floating_point ? sizeof(float) : sizeof(int)) * size);
 	char *line;
+	char buffer[width*2+1];
 	int index = 0;
 
 	while ((line = fgets(buffer, sizeof(buffer), fp)) != NULL) {
